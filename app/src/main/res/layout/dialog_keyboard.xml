@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.example.acer.transitions_everywhere.preferences.KeyboardDialog" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_main">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pref_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pref_rv">
+
+            <Button
+                android:id="@+id/pref_cancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handlers.onClick}"
+                android:text="@string/KBCancel"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeChoice" />
+
+            <Button
+                android:id="@+id/pref_reset"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handlers.onClick}"
+                android:text="@string/KBReset"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeChoice" />
+
+            <Button
+                android:id="@+id/pref_save"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handlers.onClick}"
+                android:text="@string/KBSave"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeChoice" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

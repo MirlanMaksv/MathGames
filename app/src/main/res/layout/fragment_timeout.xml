@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.example.acer.transitions_everywhere.fragments.TimeOut" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_main"
+        android:orientation="vertical"
+        android:padding="@dimen/dialog_padding">
+
+        <TextView
+            android:id="@+id/resKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/textSizeTOresKey" />
+
+        <TextView
+            android:id="@+id/resValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resKey"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/textSizeTOresValue" />
+
+        <LinearLayout
+            android:id="@+id/containerCorr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resValue"
+            android:background="@drawable/background_button_2"
+            android:gravity="center_vertical"
+            android:onClick="@{handlers.onClick}"
+            android:padding="10dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:paddingStart="10dp">
+
+            <ImageView
+                android:id="@+id/ivCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.04"
+                app:srcCompat="@drawable/icon_correct_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="0.4"
+                android:text="@string/TONumCorr"
+                android:textColor="@color/colorCorrect"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvSolved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="end"
+                android:textColor="@color/colorCorrect"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerIncor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/containerCorr"
+            android:background="@drawable/background_button_2"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:onClick="@{handlers.onClick}"
+            android:padding="10dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:paddingStart="10dp">
+
+            <ImageView
+                android:id="@+id/ivIncorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.04"
+                app:srcCompat="@drawable/icon_incorrect_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="0.4"
+                android:text="@string/TONumIncor"
+                android:textColor="@color/colorIncorrect"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvIncorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="end"
+                android:textColor="@color/colorIncorrect"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/containerIncor"
+            android:background="@drawable/background_button_2"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:onClick="@{handlers.onClick}"
+            android:padding="10dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:paddingStart="10dp">
+
+            <ImageView
+                android:id="@+id/ivAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.04"
+                app:srcCompat="@drawable/icon_clock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="0.4"
+                android:text="@string/TONumAverage"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="end"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/toMain"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handlers.onClick}"
+                android:text="@string/TOHome"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeTitle" />
+
+            <Button
+                android:id="@+id/again"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handlers.onClick}"
+                android:text="@string/TOAgain"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeTitle" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.menubuttonlib.ExpandCollapse
+        android:id="@+id/expandable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginTop"/>
+
+    <com.example.menubuttonlib.CirclesClose
+        android:id="@+id/menuFab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:id="@+id/ivLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/icons_marginTop"
+        android:layout_marginLeft="@dimen/icons_marginBtw"
+        android:layout_toRightOf="@+id/menuFab"
+        android:alpha="0"
+        android:scaleX="0"
+        android:scaleY="0"
+        app:srcCompat="@drawable/icon_like_1"/>
+
+    <ImageButton
+        android:id="@+id/ivLeaderBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/icons_marginTop"
+        android:layout_marginLeft="@dimen/icons_marginBtw"
+        android:layout_toRightOf="@+id/ivLike"
+        android:alpha="0"
+        android:scaleX="0"
+        android:scaleY="0"
+        app:srcCompat="@drawable/icon_crown_1"/>
+
+    <ImageButton
+        android:id="@+id/ivStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/icons_marginTop"
+        android:layout_marginRight="@dimen/icons_marginBtw"
+        android:layout_toLeftOf="@+id/menuFab"
+        android:alpha="0"
+        android:scaleX="0"
+        android:scaleY="0"
+        app:srcCompat="@drawable/icon_stat_1"/>
+
+    <ImageButton
+        android:id="@+id/ivSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/icons_marginTop"
+        android:layout_marginRight="@dimen/icons_marginBtw"
+        android:layout_toLeftOf="@+id/ivStat"
+        android:alpha="0"
+        android:scaleX="0"
+        android:scaleY="0"
+        app:srcCompat="@drawable/icon_settings_1"/>
+
+</merge>

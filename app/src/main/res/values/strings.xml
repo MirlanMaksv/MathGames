@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Math Games</string>
+    <string name="facebook_app_id" translatable="false">658070474351770</string>
+
+    <string name="sign_in">Войти</string>
+    <string name="sign_out">Выйти</string>
+    <string name="login">вход</string>
+    <string name="send">отправить</string>
+    <string name="with">через</string>
+    <string name="or">или</string>
+    <string name="hintEmail">ЭЛ. АДРЕС</string>
+    <string name="hintPassword">ПАРОЛЬ</string>
+    <string name="userName">ИМЯ ПОЛЬЗОВАТЕЛЯ</string>
+    <string name="signUp">Новый аккаунт</string>
+    <string name="createAcc">Создать</string>
+    <string name="forgotPassword">Забыли пароль?</string>
+    <string name="resetPassword">Восстановление пароля</string>
+    <string name="resetInfo">Ссылка на восстановление пароля будет отправлена на ваш адрес эл. почты</string>
+    <string name="resetSend">Отправить</string>
+    <string name="resetSentSuccessful">Ссылка на восстановление пароля отправлена</string>
+    <string name="resetSentUnsuccessful">Такой электронный адрес не существует</string>
+    <string name="resetDialogSending">Отправляем</string>
+    <string name="usernameLengthError">Имя пользователя должен содержать не менее 3 символов</string>
+    <string name="passwordLengthError">Пароль должен содержать не менее 6 символов</string>
+
+    <string name="emptyEmail">Введите эл. адрес</string>
+    <string name="emptyPassword">Введите пароль</string>
+
+    <string name="collisionException">Такой эл. адрес уже существует на базе, используйте другой провайдер</string>
+    <string name="notReady">Скоро</string>
+
+    <string name="tTitleGameType">Тип игры</string>
+    <string name="gameTypeTime">На время</string>
+    <string name="gameTypeTrueFalse">Истина/Ложь</string>
+    <string name="gameTypeFree">Свободная игра</string>
+    <string name="tTitleSettings">Настройки</string>
+    <string name="tTitleStat">Статистика</string>
+
+    <string name="pref_keyKB" translatable="false">keyboard</string>
+    <string name="pref_keyTheme" translatable="false">theme</string>
+
+    <string name="pref_titleKBCategory">Клавиатура</string>
+    <string name="pref_titleKBSetup">Изменить</string>
+    <string name="pref_titleKB">Настраиваемая клавиатура</string>
+    <string name="pref_titleTheme">Ночная тема</string>
+    <string name="pref_titleThemeMode">Режим</string>
+
+    <string name="KBCancel">Отменить</string>
+    <string name="KBReset">Восстановить</string>
+    <string name="KBSave">Сохранить</string>
+
+    <string name="TOHome">В меню</string>
+    <string name="TOAgain">Повторить</string>
+    <string name="TOResKey">Ваш результат</string>
+    <string name="TONumCorr">Правильные ответы</string>
+    <string name="TONumIncor">Неправильные ответы</string>
+    <string name="TONumAverage">Среднее время(сек)</string>
+
+    <string name="resListClose">Закрыть</string>
+
+    <string name="SnackBarSaved">Расположение кнопок сохранено</string>
+
+    <string name="statPlayed">Сыграно</string>
+    <string name="et_hint">Сообщение…</string>
+
+    <!--GS stands for GAME SETUP -->
+    <string name="GSoperators">Арифметические операции</string>
+
+    <string name="GSnumInterval">Интервал чисел</string>
+    <string name="GSintervalFrom">от</string>
+    <string name="GSintervalTo">до</string>
+
+    <string name="GStime">Время игры</string>
+    <string name="GSnoTime">Без ограничения времени</string>
+    <string name="GSseconds">сек</string>
+
+    <string name="GSstart">начать</string>
+</resources>

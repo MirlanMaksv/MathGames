@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/rev_to_dot"
+    tools:ignore="NewApi">
+
+    <target
+        android:name="startLine"
+        android:animation="@animator/line_todot_start" />
+
+    <target
+        android:name="rotateStartLine"
+        android:animation="@animator/rotation_rev_start_line" />
+
+    <target
+        android:name="endLine"
+        android:animation="@animator/line_todot_end" />
+
+    <target
+        android:name="rotateEndLine"
+        android:animation="@animator/rotation_rev_end_line" />
+
+</animated-vector>

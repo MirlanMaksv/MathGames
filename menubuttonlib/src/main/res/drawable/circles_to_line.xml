@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportHeight="70"
+    android:viewportWidth="70"
+
+    app:vc_viewportHeight="70"
+    app:vc_viewportWidth="70">
+
+    <group
+        android:name="rotateCircleStart"
+        android:pivotX="35"
+        android:pivotY="35">
+        <path
+            android:name="startCircle"
+            android:pathData="M10 35,
+        l 0 0
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"
+            android:fillColor="#fff"
+
+            app:vc_fillColor="#fff"
+            app:vc_pathData="M10 35,
+        l 0 0
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"/>
+
+    </group>
+
+    <path
+        android:pathData="M30 35,
+        l 0 0
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"
+        android:fillColor="#fff"
+
+        app:vc_fillColor="#fff"
+        app:vc_pathData="M30 35,
+        l 0 0
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"/>
+
+    <group
+        android:name="rotateCircleEnd"
+        android:pivotX="35"
+        android:pivotY="35">
+
+        <path
+            android:name="endCircle"
+            android:fillColor="#fff"
+            android:pathData="M50 35,
+        L 50 35
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"
+
+            app:vc_fillColor="#fff"
+            app:vc_pathData="M50 35,
+        L 50 35
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"/>
+
+    </group>
+
+</vector>

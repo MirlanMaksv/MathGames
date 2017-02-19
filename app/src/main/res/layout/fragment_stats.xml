@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:grid="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:orientation="vertical"
+        android:theme="@style/PrefTheme">
+
+        <TextView
+            android:id="@+id/stat_tvTimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0"
+            android:textSize="@dimen/textSizeStatValue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@string/statPlayed"
+            android:textColor="@color/colorTextSecondary2" />
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            grid:alignmentMode="alignBounds"
+            grid:columnCount="2">
+
+            <TextView
+                android:id="@+id/stat_tvCor"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="@dimen/textSizeStatValue"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/stat_tvAverage"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="@dimen/textSizeStatValue"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/TONumCorr"
+                android:textColor="@color/colorTextSecondary2"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/TONumAverage"
+                android:textColor="@color/colorTextSecondary2"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal" />
+
+        </android.support.v7.widget.GridLayout>
+    </LinearLayout>
+</layout>

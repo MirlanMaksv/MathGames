@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1059105429169",
+    "firebase_url": "https://mathgameschat.firebaseio.com",
+    "project_id": "mathgameschat",
+    "storage_bucket": "mathgameschat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059105429169:android:6d35040cf5aee98a",
+        "android_client_info": {
+          "package_name": "com.example.acer.transitions_everywhere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059105429169-6369uht1h40faqr3943qsa0g8q06mblc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.acer.transitions_everywhere",
+            "certificate_hash": "B3F1ABB4FC8EB4A5947F833790C6D61A743C1DBE"
+          }
+        },
+        {
+          "client_id": "1059105429169-tdttji08sflh0d2uriv2vl6s7baspssb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrrWUWA1SCNSeNLiR8TcxnB8pJ5XIzrKA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059105429169-tdttji08sflh0d2uriv2vl6s7baspssb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

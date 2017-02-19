@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:duration="@integer/anim_time"
+    android:interpolator="@android:interpolator/overshoot"
+    android:propertyName="pathData"
+    android:valueType="pathType"
+    android:valueFrom="M 100 4, l -10 0, l 0 1.3, l 10 0,, M 100 4, l 10 0, l 0 1.3, l -10 0
+                            M 100 11, l -30 0, l 0 1.3, l 30 0,, M 100 11, l 30 0, l 0 1.3, l -30 0
+                            M 100 18, l -52 0, l 0 1.3, l 52 0,, M 100 18, l 52 0, l 0 1.3, l -52 0
+                            M 100 25, l -75 0, l 0 1.3, l 75 0,, M 100 25, l 75 0, l 0 1.3, l -75 0"
+    android:valueTo="M 100 4, l -75 0, l 0 1.3, l 75 0,, M 100 4, l 75 0, l 0 1.3, l -75 0
+                            M 100 11, l -52 0, l 0 1.3, l 52 0,, M 100 11, l 52 0, l 0 1.3, l -52 0
+                            M 100 18, l -30 0, l 0 1.3, l 30 0,, M 100 18, l 30 0, l 0 1.3, l -30 0
+                            M 100 25, l -10 0, l 0 1.3, l 10 0,, M 100 25, l 10 0, l 0 1.3, l -10 0"
+    app:vc_valueType="pathType" />

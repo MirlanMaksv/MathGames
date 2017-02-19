@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <integer name="anim_time">300</integer>
+
+    <dimen name="icons_marginTop">2dp</dimen>
+    <dimen name="icons_marginBtw">8dp</dimen>
+    <dimen name="marginTop">4dp</dimen>
+
+</resources>

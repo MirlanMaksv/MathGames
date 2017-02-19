@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:duration="@integer/anim_time"
+    android:propertyName="pathData"
+    android:valueFrom="M10 35,
+        l 0 0
+        a 1 1 0 1 0 9 0,
+        l 0 0
+        a 1 1 0 1 0 -9 0
+        l 0 0 z"
+    android:valueTo="M10 30,
+        l 50 0
+        a 0 0 0 0 0 0 0
+        l 0 10
+        a 0 0 0 0 0 0 0
+        l -50 0z"
+    android:valueType="pathType"
+    app:vc_valueType="pathType" />

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.example.acer.transitions_everywhere.preferences.PrefFragment" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:theme="@style/PrefTheme">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp"
+            android:paddingLeft="5dp"
+            android:text="@string/pref_titleKBCategory"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/textSizeCategory" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/pref_divider" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/pref_tvKB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/pref_switchKB"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingBottom="15dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="12dp"
+                android:text="@string/pref_titleKB"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeTitle" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/pref_switchKB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="8dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="15dp" />
+
+            <TextView
+                android:id="@+id/pref_tvSetupKB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pref_tvKB"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:onClick="@{handlers.onClick}"
+                android:padding="10dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="8dp"
+                android:text="@string/pref_titleKBSetup"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/pref_tvTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/pref_tvSetupKB"
+                android:layout_toLeftOf="@+id/pref_switchKB"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingBottom="15dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="12dp"
+                android:text="@string/pref_titleTheme"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSizeTitle" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/pref_switchTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/pref_tvSetupKB"
+                android:paddingBottom="8dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="15dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

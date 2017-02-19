@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2d6284</color>
+    <color name="colorPrimaryDark">#1a3241</color>
+    <color name="colorAccent">#cf3f3f</color>
+
+    <color name="ripplePressed">#006973</color>
+
+
+    <!--main theme colors-->
+    <color name="backgroundStart">#fff</color>
+    <color name="backgroundEnd">#fff</color>
+
+    <color name="gradientMainStart">#f1f1f1</color>
+    <color name="gradientMainEnd">#f1f1f1</color>
+    <color name="colorAccent2">#b94141</color>
+
+    <color name="colorBtnBackgroundDefault">#2b2f2f</color>
+    <color name="colorBtnBackgroundPressed">#207a82</color>
+    <color name="colorBtnBackgroundDefault2">#002b2f2f</color>
+    <color name="colorBtnBackgroundPressed2">#417eecfc</color>
+    <color name="colorBackspaceBackgroundDefault">#2b2f2f</color>
+    <color name="colorBackspaceBackgroundPressed">#b34646</color>
+
+    <color name="colorTextPrimary">#197cbe</color>
+    <color name="colorTextSecondary">#2b5978</color>
+    <color name="colorTextSecondary2">#548084</color>
+    <color name="colorTextButtons">#1dd2ff</color>
+
+    <color name="colorCorrect">#01814d</color>
+    <color name="colorIncorrect">#b94141</color>
+
+    <!--chat colors-->
+    <color name="colorBackgroundChat">#59b37d</color>
+    <color name="cardBackground">#f3fcf6</color>
+    <color name="colorMessage">#2b2f2c</color>
+    <color name="colorMessageInfo">#4c544e</color>
+
+    <!--game type colors-->
+    <!--color to try #34475e-->
+    <color name="colorCardUpper">#273c49</color>
+    <color name="colorCardLower">#fff</color>
+    <color name="colorCardText">#225f87</color>
+
+    <!--Sign In colors-->
+    <color name="etBackground">#64112117</color>
+    <color name="loginBackground">#ffffff</color>
+    <color name="loginBackgroundPressed">#b7ffffff</color>
+    <color name="loginBackgroundDisabled">#b4b4b4</color>
+    <color name="signInText">#0e0e0e</color>
+    <color name="signInTextHint">#fe363636</color>
+    <color name="loginText">#0e0e0e</color>
+
+    <!--Game setup colors-->
+    <color name="buttonEnabled">#2b2f2f</color>
+    <color name="buttonDisabled">#be2b2f2f</color>
+    <color name="buttonPressed">#4a5151</color>
+</resources>

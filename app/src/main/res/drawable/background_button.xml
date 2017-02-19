@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/colorBtnBackgroundPressed" />
+            <stroke android:width="0.2dp" android:color="@color/backgroundStart" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/colorBtnBackgroundDefault" />
+            <stroke android:width="0.2dp" android:color="@color/backgroundStart" />
+        </shape>
+    </item>
+</selector>

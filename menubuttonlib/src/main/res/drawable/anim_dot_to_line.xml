@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/circles_to_line"
+    tools:ignore="NewApi">
+
+    <target
+        android:name="endCircle"
+        android:animation="@animator/dot_toline_end" />
+
+    <target
+        android:name="rotateCircleEnd"
+        android:animation="@animator/rotation_end_line" />
+
+    <target
+        android:name="startCircle"
+        android:animation="@animator/dot_toline_start" />
+
+    <target
+        android:name="rotateCircleStart"
+        android:animation="@animator/rotation_start_line" />
+
+</animated-vector>
