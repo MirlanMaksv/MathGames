@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Transitions_Everywhere.iml" filepath="$PROJECT_DIR$/Transitions_Everywhere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MathGames.iml" filepath="$PROJECT_DIR$/MathGames.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fablib/fablib.iml" filepath="$PROJECT_DIR$/fablib/fablib.iml" />
       <module fileurl="file://$PROJECT_DIR$/menubuttonlib/menubuttonlib.iml" filepath="$PROJECT_DIR$/menubuttonlib/menubuttonlib.iml" />

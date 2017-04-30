@@ -117,7 +117,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
         behavior = BottomSheetBehavior.from(binding.bottomSheet);
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
 
-            private int offSet = Utils.convertDpToPixel(35);
+            private int offSet = Utils.convertDpToPixels(35);
 
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {

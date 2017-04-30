@@ -21,7 +21,7 @@ public class Utils {
         return buttons;
     }
 
-    public static int convertDpToPixel(int dp){
+    public static int convertDpToPixels(int dp){
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         float px = dp * (metrics.densityDpi / 160f);
         return Math.round(px);

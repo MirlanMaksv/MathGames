@@ -5,19 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.acer.transitions_everywhere.preferences.PrefsHelper;
-import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Calendar;
 
 /**
  * Created by Mirlan on 27.10.2016.
@@ -44,9 +39,9 @@ public class TestActivity extends AppCompatActivity {
         container = (ViewGroup) findViewById(R.id.testContainer);
         userInfo = (TextView) findViewById(R.id.userInfo);
 
-//        MessageModel model = new MessageModel("Test Message", "Mirlan", null, Calendar.getInstance().getTimeZone().toString(), System.currentTimeMillis());
 
         ref = FirebaseDatabase.getInstance().getReference();
+//        MessageModel model = new MessageModel("Test Message", "Mirlan", null, Calendar.getInstance().getTimeZone().toString(), System.currentTimeMillis());
 //        ref.child("messages").push().setValue(model);
 
         auth = FirebaseAuth.getInstance();

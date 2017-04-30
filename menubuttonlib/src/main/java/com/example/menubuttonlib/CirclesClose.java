@@ -10,6 +10,7 @@ import com.wnafee.vector.compat.AnimatedVectorDrawable;
 
 /**
  * Created by Mirlan on 17.09.2016.
+ *
  */
 
 public class CirclesClose extends ImageView {
