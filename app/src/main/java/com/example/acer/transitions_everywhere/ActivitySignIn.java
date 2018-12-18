@@ -31,6 +31,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.acer.transitions_everywhere.models.UserModel;
 import com.example.acer.transitions_everywhere.preferences.PrefsHelper;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -39,11 +40,12 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -53,6 +55,8 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
@@ -66,7 +70,7 @@ public class ActivitySignIn extends AppCompatActivity implements
     private static final int RC_SIGN_IN = 9001;
     private static final int RC_SIGN_UP = 101;
 
-    private GoogleApiClient mGoogleApiClient;
+    private GoogleSignInClient mGoogleSignInClient;
 
     // Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
@@ -97,21 +101,18 @@ public class ActivitySignIn extends AppCompatActivity implements
         loginManager = LoginManager.getInstance();
         loginManager.registerCallback(mCallbackManager, this);
 
-        container = (ViewGroup) findViewById(R.id.sign_in_layout);
+        container = findViewById(R.id.sign_in_layout);
         container.setOnClickListener(this);
 
-        etEmail = (EditText) findViewById(R.id.etEmail);
-        etPassword = (EditText) findViewById(R.id.etPassword);
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -121,7 +122,7 @@ public class ActivitySignIn extends AppCompatActivity implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.googleSignIn:
-                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(signInIntent, RC_SIGN_IN);
                 break;
             case R.id.facebookSignIn:
@@ -167,15 +168,17 @@ public class ActivitySignIn extends AppCompatActivity implements
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if (result.isSuccess()) {
-                showProgressDialog();
-                GoogleSignInAccount account = result.getSignInAccount();
+            try {
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
-            } else {
-                // Google Sign In failed
-                Log.e(TAG, "Google Sign In failed.");
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                // ...
             }
         } else if (requestCode == RC_SIGN_UP && resultCode == RESULT_OK) {
             setResult(RESULT_OK);
@@ -183,6 +186,7 @@ public class ActivitySignIn extends AppCompatActivity implements
         } else {
             mCallbackManager.onActivityResult(requestCode, resultCode, data);
         }
+        Log.e("TAG", "No user ==> " + (mFirebaseAuth.getCurrentUser() == null));
     }
 
     @Override

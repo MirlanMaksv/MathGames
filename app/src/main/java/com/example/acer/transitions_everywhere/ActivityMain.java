@@ -71,7 +71,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
 
-    private DatabaseReference mFirebaseDatabaseReference;
+    private DatabaseReference reference;
     private FirebaseRecyclerAdapter<MessageModel, MessageHolder>
             mFirebaseAdapter;
 
@@ -134,8 +134,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
                     isOnTop = true;
                     if (!ActivityMain.this.impulse.isStarted() && !ActivityMain.this.impulse.isRunning())
                         ActivityMain.this.impulse.start();
-                }
-                else if (slideOffset == 1.0) {
+                } else if (slideOffset == 1.0) {
                     upDown(false);
                     isOnTop = false;
                     if (ActivityMain.this.impulse.isStarted() || ActivityMain.this.impulse.isRunning())
@@ -159,8 +158,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
         if (!expand && isMorphedUp) {
             binding.upDown.morphDown();
             isMorphedUp = false;
-        }
-        else if (expand && !isMorphedUp) {
+        } else if (expand && !isMorphedUp) {
             binding.upDown.morphUp();
             isMorphedUp = true;
         }
@@ -179,12 +177,12 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
 //        mLinearLayoutManager.setStackFromEnd(true);
 
         // New child entries
-        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        reference = FirebaseDatabase.getInstance().getReference();
         mFirebaseAdapter = new CustomFRA(
                 MessageModel.class,
                 R.layout.item_message,
                 MessageHolder.class,
-                mFirebaseDatabaseReference.child(MESSAGES_CHILD), binding.progressBar);
+                reference.child(MESSAGES_CHILD), binding.progressBar);
 
         binding.bsRecyclerView.setLayoutManager(mLinearLayoutManager);
         binding.bsRecyclerView.setAdapter(mFirebaseAdapter);
@@ -217,8 +215,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().trim().length() > 0) {
                     binding.sendButton.setEnabled(true);
-                }
-                else {
+                } else {
                     binding.sendButton.setEnabled(false);
                 }
             }
@@ -240,23 +237,22 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
         if (mFirebaseUser != null) {
             String name = mFirebaseUser.getDisplayName();
             if (name == null) {
-                mFirebaseDatabaseReference.child("users").child(mFirebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+                ValueEventListener listener = new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            UserModel model = snapshot.getValue(UserModel.class);
-                            Log.e("ValueEvent", "onDataChange\nemail: " + model.getEmail() + "\nusername: " + model.getUserName());
-                            mUsername = model.getUserName();
-                        }
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        UserModel model = dataSnapshot.getValue(UserModel.class);
+                        Log.e("ValueEvent", "onDataChange\nemail: " + model.getEmail() + "\nusername: " + model.getUserName());
+                        mUsername = model.getUserName();
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
                         Log.e("ValueEvent", "onCancelled");
                     }
-                });
-            }
-            else if (name.length() > 0)
+                };
+
+                reference.child("users").child(mFirebaseUser.getUid()).addListenerForSingleValueEvent(listener);
+            } else if (name.length() > 0)
                 mUsername = name;
             else mUsername = ANONYMOUS;
 
@@ -277,29 +273,24 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
                 LoginManager.getInstance().logOut();
                 Auth.GoogleSignInApi.signOut(mGoogleApiClient);
                 assignUser();
-            }
-            else
+            } else
                 startActivityForResult(new Intent(this, ActivitySignIn.class), SignInREQCODE);
-        }
-        else if (id == R.id.sendButton) {
+        } else if (id == R.id.sendButton) {
             MessageModel messageModel = new
                     MessageModel(binding.messageEditText.getText().toString(),
                     mUsername,
                     mPhotoUrl,
                     Calendar.getInstance().getTimeZone().getDisplayName(),
                     System.currentTimeMillis());
-            mFirebaseDatabaseReference.child(MESSAGES_CHILD).push().setValue(messageModel);
+            reference.child(MESSAGES_CHILD).push().setValue(messageModel);
             binding.messageEditText.setText("");
-        }
-        else if (id == R.id.upDown) {
+        } else if (id == R.id.upDown) {
             if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
                 behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-            }
-            else if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+            } else if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
             }
-        }
-        else if (id == R.id.test) {
+        } else if (id == R.id.test) {
             startActivity(new Intent(this, TestActivity.class));
         }
     }
@@ -311,8 +302,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
             intent.putExtra("id", id);
             startActivityForResult(intent, REQCODE);
             themeWas = preferences.getBoolean(getString(R.string.pref_keyTheme));
-        }
-        else if (id == R.id.ivLike || id == R.id.ivLeaderBoard) {
+        } else if (id == R.id.ivLike || id == R.id.ivLeaderBoard) {
             Snackbar.make(binding.mainContainer, R.string.notReady, Snackbar.LENGTH_LONG).show();
         }
     }
@@ -322,8 +312,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQCODE && themeWas != preferences.getBoolean(getString(R.string.pref_keyTheme))) {
             recreate();
-        }
-        else if (requestCode == SignInREQCODE && resultCode == RESULT_OK) {
+        } else if (requestCode == SignInREQCODE && resultCode == RESULT_OK) {
             assignUser();
         }
     }
@@ -332,8 +321,7 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
     public void onBackPressed() {
         if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
             behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        }
-        else
+        } else
             super.onBackPressed();
     }
 
