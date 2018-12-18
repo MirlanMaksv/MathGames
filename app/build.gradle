@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.example.acer.transitions_everywhere"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -22,34 +22,40 @@ android {
     dataBinding {
         enabled true
     }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:cardview-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support:gridlayout-v7:25.3.1'
-    compile "com.andkulikov:transitionseverywhere:1.6.7"
-    compile ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:gridlayout-v7:27.1.1'
+    implementation "com.andkulikov:transitionseverywhere:1.6.7"
+    implementation ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
         transitive = true;
     }
-    compile project(path: ':fablib')
-    compile project(path: ':menubuttonlib')
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.appyvet:materialrangebar:1.3'
+    implementation project(path: ':fablib')
+    implementation project(path: ':menubuttonlib')
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.appyvet:materialrangebar:1.3'
 
     // Google
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
     // Firebase
-    compile 'com.google.firebase:firebase-auth:9.4.0'
-    compile 'com.google.firebase:firebase-database:9.4.0'
-    compile 'com.firebaseui:firebase-ui-database:0.4.0'
+    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation 'com.google.firebase:firebase-database:16.0.5'
+    implementation 'com.firebaseui:firebase-ui-database:0.4.0'
 
 
     // Facebook
-    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
