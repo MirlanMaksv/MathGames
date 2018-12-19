@@ -40,12 +40,12 @@ public class GameSetup extends Fragment implements View.OnClickListener, RangeBa
         operators = new ArrayList<>();
         operators.add(0);
 
-        ivTypeTime = (ImageView) view.findViewById(R.id.typeTime);
-        ivTypeTrue = (ImageView) view.findViewById(R.id.typeTrueFalse);
-        ivAdd = (ImageView) view.findViewById(R.id.typeAddition);
-        ivSub = (ImageView) view.findViewById(R.id.typeSubtraction);
-        ivMult = (ImageView) view.findViewById(R.id.typeMultiplication);
-        ivDiv = (ImageView) view.findViewById(R.id.typeDivision);
+        ivTypeTime = view.findViewById(R.id.typeTime);
+        ivTypeTrue = view.findViewById(R.id.typeTrueFalse);
+        ivAdd = view.findViewById(R.id.typeAddition);
+        ivSub = view.findViewById(R.id.typeSubtraction);
+        ivMult = view.findViewById(R.id.typeMultiplication);
+        ivDiv = view.findViewById(R.id.typeDivision);
 
         ivTypeTime.setOnClickListener(this);
         ivTypeTrue.setOnClickListener(this);
@@ -63,20 +63,20 @@ public class GameSetup extends Fragment implements View.OnClickListener, RangeBa
         ivDiv.setSelected(false);
 
 
-        ImageView ivRight = (ImageView) view.findViewById(R.id.increment);
-        ImageView ivLeft = (ImageView) view.findViewById(R.id.decrement);
+        ImageView ivRight = view.findViewById(R.id.increment);
+        ImageView ivLeft = view.findViewById(R.id.decrement);
         ivRight.setOnClickListener(this);
         ivLeft.setOnClickListener(this);
 
-        tvLeftRange = (TextView) view.findViewById(R.id.tvLeftRange);
-        tvRightRange = (TextView) view.findViewById(R.id.tvRightRange);
+        tvLeftRange = view.findViewById(R.id.tvLeftRange);
+        tvRightRange = view.findViewById(R.id.tvRightRange);
 
-        tvTime = (TextView) view.findViewById(R.id.tvTimeSelected);
-        timeSeekBar = (RangeBar) view.findViewById(R.id.timeSeekBar);
+        tvTime = view.findViewById(R.id.tvTimeSelected);
+        timeSeekBar = view.findViewById(R.id.timeSeekBar);
         timeSeekBar.setOnRangeBarChangeListener(this);
         timeSeekBar.setRangePinsByValue(10, 150);
 
-        numSeekBar = (RangeBar) view.findViewById(R.id.numSeekBar);
+        numSeekBar = view.findViewById(R.id.numSeekBar);
         numSeekBar.setOnRangeBarChangeListener(this);
         numSeekBar.setRangePinsByValue(1, 50);
 

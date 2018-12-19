@@ -36,8 +36,8 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        container = (ViewGroup) findViewById(R.id.testContainer);
-        userInfo = (TextView) findViewById(R.id.userInfo);
+        container = findViewById(R.id.testContainer);
+        userInfo = findViewById(R.id.userInfo);
 
 
         ref = FirebaseDatabase.getInstance().getReference();

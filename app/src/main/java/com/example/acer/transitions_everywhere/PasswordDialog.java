@@ -1,6 +1,5 @@
 package com.example.acer.transitions_everywhere;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,7 +7,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,10 +47,10 @@ public class PasswordDialog extends DialogFragment implements View.OnClickListen
         super.onViewCreated(view, savedInstanceState);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        reset = (Button) view.findViewById(R.id.btnReset);
+        reset = view.findViewById(R.id.btnReset);
         reset.setOnClickListener(this);
         reset.setEnabled(false);
-        etEmail = ((EditText) view.findViewById(R.id.etEmail));
+        etEmail = view.findViewById(R.id.etEmail);
         etEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -75,7 +73,7 @@ public class PasswordDialog extends DialogFragment implements View.OnClickListen
     public void onClick(View view) {
         String email = etEmail.getText().toString();
         if (email.length() > 0 && email.contains("@")) {
-            bar = (ProgressBar) getView().findViewById(R.id.progressBar);
+            bar = getView().findViewById(R.id.progressBar);
             bar.setVisibility(View.VISIBLE);
             reset.setClickable(false);
             firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,10 +34,9 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mFirebaseAuth;
 
     private EditText etUserName, etEmail, etPassword;
-    private ViewGroup container;
+//    private ViewGroup container;
     private ProgressDialog progressDialog;
     private String username, email, password;
-    private Button signUp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,12 +47,11 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        signUp = findViewById(R.id.btnSignUp);
-        signUp.setOnClickListener(this);
+        findViewById(R.id.btnSignUp).setOnClickListener(this);
         etUserName = findViewById(R.id.etUserName);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
-        container = findViewById(R.id.sign_in_layout);
+//        container = findViewById(R.id.sign_in_layout);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference();

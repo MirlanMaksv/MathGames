@@ -45,23 +45,21 @@ import java.util.Calendar;
 
 public class ActivityMain extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, OnMenuItemClick {
 
+    public static final String MESSAGES_CHILD = "messages";
+    public static final String ANONYMOUS = "anonymous";
+    private static final String TAG = "ActivityMain";
+    public static final int DEFAULT_MSG_LENGTH_LIMIT = 100;
+    private static final int REQCODE = 101;
+    private static final int SignInREQCODE = 102;
     private ActivityMainBinding binding;
     private AnimatorSet impulse;
     private PrefsHelper preferences;
     private boolean themeWas;
     private boolean isOnTop, isMorphedUp = true;
-
     private BottomSheetBehavior behavior;
-
-    private static final String TAG = "ActivityMain";
-    public static final String MESSAGES_CHILD = "messages";
-    public static final int DEFAULT_MSG_LENGTH_LIMIT = 100;
     //    private static final int REQUEST_INVITE = 1;
 //    private static final String MESSAGE_SENT_EVENT = "message_sent";
     private String mUsername;
-    private static final int REQCODE = 101;
-    private static final int SignInREQCODE = 102;
-    public static final String ANONYMOUS = "anonymous";
     private String mPhotoUrl;
     private GoogleApiClient mGoogleApiClient;
 
@@ -241,8 +239,10 @@ public class ActivityMain extends AppCompatActivity implements GoogleApiClient.O
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         UserModel model = dataSnapshot.getValue(UserModel.class);
-                        Log.e("ValueEvent", "onDataChange\nemail: " + model.getEmail() + "\nusername: " + model.getUserName());
-                        mUsername = model.getUserName();
+                        if (model != null) {
+                            Log.e("ValueEvent", "onDataChange\nemail: " + model.getEmail() + "\nusername: " + model.getUserName());
+                            mUsername = model.getUserName();
+                        }
                     }
 
                     @Override

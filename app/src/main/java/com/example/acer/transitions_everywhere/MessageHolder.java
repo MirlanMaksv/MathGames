@@ -16,10 +16,10 @@ public class MessageHolder extends RecyclerView.ViewHolder {
 
     public MessageHolder(View v) {
         super(v);
-        tvMessage = (TextView) itemView.findViewById(R.id.tv_message);
-        tvName = (TextView) itemView.findViewById(R.id.tv_name);
-        image = (ImageView) itemView.findViewById(R.id.image);
-        tvTime = (TextView) itemView.findViewById(R.id.tv_time);
-        nameOnImage = (TextView) itemView.findViewById(R.id.nameOnImage);
+        tvMessage = itemView.findViewById(R.id.tv_message);
+        tvName = itemView.findViewById(R.id.tv_name);
+        image = itemView.findViewById(R.id.image);
+        tvTime = itemView.findViewById(R.id.tv_time);
+        nameOnImage = itemView.findViewById(R.id.nameOnImage);
     }
 }

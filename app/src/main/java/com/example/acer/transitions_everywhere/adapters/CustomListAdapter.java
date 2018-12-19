@@ -44,8 +44,8 @@ public class CustomListAdapter extends RecyclerView.Adapter<CustomListAdapter.Vi
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvValue = (TextView) itemView.findViewById(R.id.listItem_tvValue);
-            tvPos = (TextView) itemView.findViewById(R.id.listItem_tvPos);
+            tvValue = itemView.findViewById(R.id.listItem_tvValue);
+            tvPos = itemView.findViewById(R.id.listItem_tvPos);
         }
     }
 }

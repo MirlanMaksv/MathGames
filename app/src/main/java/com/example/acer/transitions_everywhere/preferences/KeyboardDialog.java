@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.acer.transitions_everywhere.adapters.CustomAdapter;
 import com.example.acer.transitions_everywhere.R;
 import com.example.acer.transitions_everywhere.Utils;
+import com.example.acer.transitions_everywhere.adapters.CustomAdapter;
 import com.example.acer.transitions_everywhere.databinding.DialogKeyboardBinding;
 import com.example.fablib.OnDragStartListener;
 import com.example.fablib.SimpleItemTouchHelperCallback;

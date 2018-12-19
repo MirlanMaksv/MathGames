@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
-import com.example.acer.transitions_everywhere.models.MessageModel;
 import com.example.acer.transitions_everywhere.MessageHolder;
 import com.example.acer.transitions_everywhere.R;
+import com.example.acer.transitions_everywhere.models.MessageModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 

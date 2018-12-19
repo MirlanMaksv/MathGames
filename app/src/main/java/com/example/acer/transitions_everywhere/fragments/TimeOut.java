@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,13 @@ import java.util.Locale;
  */
 public class TimeOut extends Fragment {
 
+    private FragmentTimeoutBinding binding;
+    @Nullable
+    private Bundle bundleExtra;
+    @Nullable
+    private ArrayList<String> correct, incorrect;
+
+    @NonNull
     public static Fragment newInstance(ArrayList<String> correct, ArrayList<String> incorrect, Bundle bundleExtra) {
         Bundle bundle = new Bundle();
         bundle.putStringArrayList(Const.CORRECTLIST, correct);
@@ -36,20 +44,16 @@ public class TimeOut extends Fragment {
         return fragment;
     }
 
-    private FragmentTimeoutBinding binding;
-    private Bundle bundleExtra;
-    private ArrayList<String> correct, incorrect;
-
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_timeout, container, false);
         return binding.getRoot();
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.setHandlers(this);
         correct = getArguments().getStringArrayList(Const.CORRECTLIST);
@@ -71,13 +75,12 @@ public class TimeOut extends Fragment {
         saveResults(correct.size(), incorrect.size());
     }
 
-    public void onClick(View view) {
+    public void onClick(@NonNull View view) {
         int id = view.getId();
         if (id == R.id.toMain) {
             getActivity().setResult(Activity.RESULT_OK);
             getActivity().finish();
-        }
-        else if (id == R.id.again) {
+        } else if (id == R.id.again) {
             Intent intent = new Intent(new Intent(getContext(), ActivityPlay.class));
             intent.putExtra(Const.BUNDLE, bundleExtra);
 //            startActivity(intent);
@@ -85,8 +88,7 @@ public class TimeOut extends Fragment {
             getActivity().setResult(Activity.RESULT_OK, intent);
             getActivity().finish();
 
-        }
-        else if (id == R.id.containerCorr || id == R.id.containerIncor) {
+        } else if (id == R.id.containerCorr || id == R.id.containerIncor) {
             showDialog(id == R.id.containerCorr ? correct : incorrect);
         }
     }

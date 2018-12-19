@@ -44,13 +44,13 @@ public class MenuButton extends RelativeLayout implements View.OnClickListener {
 
         View rootView = inflate(getContext(), R.layout.menu_btn, this);
 
-        mMenuFab = (CirclesClose) rootView.findViewById(R.id.menuFab);
-        mExpandCollapse = (ExpandCollapse) rootView.findViewById(R.id.expandable);
+        mMenuFab = rootView.findViewById(R.id.menuFab);
+        mExpandCollapse = rootView.findViewById(R.id.expandable);
 
-        mIvSettings = (ImageButton) rootView.findViewById(R.id.ivSettings);
-        mIvStat = (ImageButton) rootView.findViewById(R.id.ivStat);
-        mIvLeaderBoard = (ImageButton) rootView.findViewById(R.id.ivLeaderBoard);
-        mIvLike = (ImageButton) rootView.findViewById(R.id.ivLike);
+        mIvSettings = rootView.findViewById(R.id.ivSettings);
+        mIvStat = rootView.findViewById(R.id.ivStat);
+        mIvLeaderBoard = rootView.findViewById(R.id.ivLeaderBoard);
+        mIvLike = rootView.findViewById(R.id.ivLike);
 
         mMenuFab.setOnClickListener(this);
         mIvSettings.setOnClickListener(this);

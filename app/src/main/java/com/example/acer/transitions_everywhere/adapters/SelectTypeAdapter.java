@@ -1,7 +1,6 @@
 package com.example.acer.transitions_everywhere.adapters;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,8 +65,8 @@ public class SelectTypeAdapter extends RecyclerView.Adapter<SelectTypeAdapter.Vi
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ivIcon = (ImageView) itemView.findViewById(R.id.item_iv);
-            tvName = (TextView) itemView.findViewById(R.id.item_tv);
+            ivIcon = itemView.findViewById(R.id.item_iv);
+            tvName = itemView.findViewById(R.id.item_tv);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

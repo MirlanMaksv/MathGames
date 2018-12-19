@@ -114,8 +114,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            btn = (Button) itemView.findViewById(R.id.item_btn);
-            ib = (ImageButton) itemView.findViewById(R.id.item_ib);
+            btn = itemView.findViewById(R.id.item_btn);
+            ib = itemView.findViewById(R.id.item_ib);
         }
     }
 }

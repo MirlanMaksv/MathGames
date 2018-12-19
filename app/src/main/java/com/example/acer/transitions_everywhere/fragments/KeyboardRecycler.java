@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.acer.transitions_everywhere.R;
 import com.example.acer.transitions_everywhere.ActivityPlay;
+import com.example.acer.transitions_everywhere.R;
 import com.example.acer.transitions_everywhere.Utils;
 import com.example.acer.transitions_everywhere.adapters.CustomAdapter;
 import com.example.acer.transitions_everywhere.preferences.PrefsHelper;
@@ -41,7 +41,7 @@ public class KeyboardRecycler extends Fragment implements OnDragStartListener {
             buttons = Utils.getButtons();
         CustomAdapter adapter = new CustomAdapter(buttons, this, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
     }

@@ -2,7 +2,6 @@ package com.example.fablib;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 
 /**
  * Created by Mirlan on 22.09.2016.

@@ -45,7 +45,7 @@ public class ResultListDialog extends DialogFragment {
 
         ArrayList<String> list = getArguments().getStringArrayList("list");
 
-        RecyclerView rv = (RecyclerView) view.findViewById(R.id.rv);
+        RecyclerView rv = view.findViewById(R.id.rv);
         CustomListAdapter adapterCorrect = new CustomListAdapter(list);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(adapterCorrect);
